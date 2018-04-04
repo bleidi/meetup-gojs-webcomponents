@@ -51,7 +51,16 @@ module.exports = {
         from: path.resolve(__dirname, './node_modules/reveal.js/css/theme/black.css')
       },
       {
+        from: path.resolve(__dirname, './node_modules/highlight.js/styles/railscasts.css')
+      },
+      {
+        from: path.resolve(__dirname, './node_modules/headjs/dist/1.0.0/head.js')
+      },
+      {
         from: path.resolve(__dirname, './node_modules/reveal.js/js/reveal.js')
+      },
+      {
+        from: path.resolve(__dirname, './node_modules/reveal.js/plugin/highlight/highlight.js')
       }
     ]),
     new webpack.HotModuleReplacementPlugin(),
