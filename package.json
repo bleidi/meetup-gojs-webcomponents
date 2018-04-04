@@ -1,0 +1,11 @@
+{
+  "name": "meetup-gojs-webcomponents",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/bleidi/meetup-gojs-webcomponents.git",
+  "author": "bleidi",
+  "license": "MIT",
+  "devDependencies": {
+    "reveal.js": "3.6.0"
+  }
+}
