@@ -48,6 +48,9 @@ module.exports = {
         from: path.resolve(__dirname, './node_modules/reveal.js/css/reveal.css')
       },
       {
+        from: path.resolve(__dirname, './node_modules/reveal.js/css/theme/black.css')
+      },
+      {
         from: path.resolve(__dirname, './node_modules/reveal.js/js/reveal.js')
       }
     ]),
