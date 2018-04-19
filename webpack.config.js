@@ -27,6 +27,12 @@ module.exports = {
         use: {
           loader: 'html-loader'
         }
+      },
+      {
+        test: /\.(js)$/,
+        use: {
+          loader: 'babel-loader'
+        }
       }
     ]
   },
@@ -61,6 +67,18 @@ module.exports = {
       },
       {
         from: path.resolve(__dirname, './node_modules/reveal.js/plugin/highlight/highlight.js')
+      }, 
+      {
+        from: path.resolve(__dirname, './node_modules/@webcomponents/webcomponentsjs/webcomponents-lite.js')
+      },
+      {
+        from: path.resolve(__dirname, './src/welcome-aboard/welcome-aboard.html')      
+      },
+      {
+        from: path.resolve(__dirname, 'thinking.mp4')
+      },
+      {
+        from: path.resolve(__dirname, 'hl_ty.mp4')
       }
     ]),
     new webpack.HotModuleReplacementPlugin(),

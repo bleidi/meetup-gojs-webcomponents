@@ -9,6 +9,7 @@
 	<link rel="stylesheet" href="black.css" id="theme">
 	<link rel="stylesheet" href="railscasts.css">
 	<link rel="stylesheet" href="static/style.css">
+	<link rel="import" href="welcome-aboard.html">
 
 </head>
 
@@ -28,7 +29,7 @@
 			<!-- slide 2 -->
 			<section>
 				<pre>
-					<code data-trim>
+					<code class="HTML" data-trim>
 						<welcome-aboard name="GOJS"></welcome-aboard>
 					</code>
 				</pre>
@@ -42,17 +43,134 @@
 				<ul>
 					<li>Custom elements</li>
 					<li>Shadow DOM</li>
-					<li>HTML imports</li>
 					<li>HTML template</li>
+					<li>HTML imports</li>
 				</ul>
 				<p>
 					<small>
 						<a href="https://www.webcomponents.org/introduction">font</a>
 					</small>
 				</p>
+				<p>
+					<small>
+							<a href="http://jsfiddle.net/7r7dm/105/">style</a>
+					</small>
+				</p>
 			</section>
+
+			<!-- slide 4 -->
+			<section>
+				<h3>Custom elements</h3>
+				<pre>
+					<code class="JavaScript" data-trim data-noescape>
+						class WelcomeAboard extends HTMLElement {
+							(...)
+						}
+
+						customElements.define('welcome-aboard', WelcomeAboard);
+					</code>
+				</pre>				
+				<br>
+				<welcome-aboard name="GOJS"></welcome-aboard>
+				<br>
+				<ul>
+					<li>Must extends native elements (document.createElement(...))</li>
+					<li>Must have "-" in the name</li>
+					<li>Must not be self-closed</li>
+				</ul>
+			</section>
+
+			<!-- slide 5 -->
+			<section>
+				<h3>Shadow DOM</h3>
+				<pre>
+					<code class="JavaScript" data-trim data-noescape>
+						var shadow = this.attachShadow({mode: 'open'});
+						var el = document.createElement(...);
+
+						shadow.appendChild(el);
+					</code>
+				</pre>
+				<br>
+				<welcome-aboard-shadowdom name="GOJS"></welcome-aboard-shadowdom>
+				<br>
+				<ul>
+					<li>close/open-mode</li>
+					<li>encapsulated dom-tree &amp; style</li>
+					<li>"slotable"</li>
+				</ul>
+			</section>
+
+			<!-- slide 6 -->
+			<section>
+				<h3>HTML Template</h3>
+				<pre>
+					<code class="HTML" data-trim>
+						<template id="welcome-aboard-template">
+							(...)
+						</template>
+					</code>
+				</pre>
+				<br>
+				<pre>
+					<code class="JavaScript" data-trim data-noescape>
+						const currentDocument = document.currentScript.ownerDocument;
+						const template = currentDocument.querySelector(...);
+    				shadowRoot.appendChild(template.content.cloneNode(true));
+					</code>
+				</pre>				
+			</section>
+
+			<!-- slide 7 -->
+			<section>
+				<h3>HTML Template</h3>
+				<welcome-aboard-html-template name="GOJS"></welcome-aboard-html-template>
+			</section>
+
+			<!-- slide 8 -->
+			<section>
+				<h3>HTML Template</h3>
+				<ul>
+					<li>No mixed JSX-liked syntax</li>
+					<li>Can be loaded and instantiated lazily</li>
+				</ul>
+			</section>
+
+			<!-- slide 9 -->
+			<section>
+				<h3>HTML Import (!)</h3>
+				<pre>
+					<code class="HTML" data-trim>
+							<link rel="import" href="welcome-aboard.html">
+					</code>
+				</pre>
+			</section>
+			
+			<!-- slide 10 -->
+			<section>
+				<h3>HTML Import (!)</h3>
+				<welcome-aboard-html-import name ="GOJS"></welcome-aboard-html-import>
+			</section>
+
+			<!-- slide 11 -->
+			<section>
+				<h1>Questions?</h1>
+				<video loop data-autoplay src="thinking.mp4"></video>
+			</section>
+
+			<!-- slide 12 -->
+			<section>
+				<h2>Thank you!</h2>
+				<video loop data-autoplay src="hl_ty.mp4"></video>
+				<p>
+					<small>GitHub: <a href="https://github.com/bleidi">bleidi</a></small>
+				</p>
+			</section>
+
 		</div>
 	</div>
+
+	<script src="webcomponents-lite.js"></script>
 <script type="text/javascript" src="app.js"></script></body>
 
 </html>
